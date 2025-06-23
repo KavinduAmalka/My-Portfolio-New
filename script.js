@@ -75,3 +75,28 @@ form.addEventListener("submit", function (e) {
     console.error(error);
   });
 });
+
+// show hidden projects when clicking "See More"
+const toggleBtn = document.getElementById('toggle-projects-btn');
+const hiddenProjects = document.querySelectorAll('.hidden-project');
+let showingAll = false; // Track toggle state
+
+toggleBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  if (!showingAll) {
+    // Show all
+    hiddenProjects.forEach(project => {
+      project.style.display = 'block';
+    });
+    toggleBtn.textContent = 'See Less';
+    showingAll = true;
+  } else {
+    // Hide back to first three
+    hiddenProjects.forEach(project => {
+      project.style.display = 'none';
+    });
+    toggleBtn.textContent = 'See More';
+    showingAll = false;
+  }
+});

@@ -434,6 +434,9 @@ span{
   align-items: center;
   flex-direction: column;
 }
+.hidden-project {
+  display: none;
+}
 
 .project-cards{
   position: relative;
